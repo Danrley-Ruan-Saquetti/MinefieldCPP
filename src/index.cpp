@@ -9,47 +9,21 @@
 
 using namespace std;
 
-PlayerMove* readPlayerMove() {
-  string inputPlayerMove;
-  cout << endl
-       << "$ ";
-  getline(cin, inputPlayerMove);
+PlayerMove* readPlayerMove(int lengthBoard) {
+  int x, y;
 
-  vector<string> inputPlayerMoveArgs = split(inputPlayerMove, ' ');
+  cout << "$ X: ";
+  cin >> x;
 
-  int x,
-      y;
-  bool isMark = false;
-  try {
-    switch (inputPlayerMoveArgs.size()) {
-    case 2:
-      x = stoi(inputPlayerMoveArgs[0]) - 1;
-      y = stoi(inputPlayerMoveArgs[1]) - 1;
+  cout << "$ Y: ";
+  cin >> y;
 
-      break;
-    case 3:
-      x = stoi(inputPlayerMoveArgs[1]) - 1;
-      y = stoi(inputPlayerMoveArgs[2]) - 1;
-
-      if (inputPlayerMoveArgs[0] == "!") {
-        isMark = true;
-      }
-
-      break;
-    default:
-      cout << "Invalid command" << endl;
-      return nullptr;
-    }
-  } catch (const runtime_error& e) {
-    cout << "Invalid command" << endl;
+  if (x <= 0 || y <= 0 || x >= lengthBoard || y >= lengthBoard) {
+    cout << "Invalid action" << endl;
     return nullptr;
   }
 
-  cout << "X: " << x << ", Y: " << y;
-
-  PlayerMove* playerMove = new PlayerMove(x, y, isMark);
-
-  return playerMove;
+  return new PlayerMove(x - 1, y - 1, false);
 }
 
 int main() {
@@ -76,14 +50,14 @@ int main() {
 
     do {
       uiGame.writeBoard();
-      playerMove = readPlayerMove();
+      playerMove = readPlayerMove(game.getLengthBoard());
     } while (playerMove == nullptr);
 
     game.loadBoard(playerMove->x, playerMove->y);
 
     do {
       uiGame.writeBoard();
-      playerMove = readPlayerMove();
+      playerMove = readPlayerMove(game.getLengthBoard());
 
       if (playerMove != nullptr) {
         game.performPlayerMove(*playerMove);

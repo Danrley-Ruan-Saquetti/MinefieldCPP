@@ -11,7 +11,6 @@ BoardMinefield::BoardMinefield(int lengthBoard, int amountBombs)
       board(lengthBoard, std::vector<int>(lengthBoard)) {}
 
 void BoardMinefield::loadBoard(int excludeX, int excludeY) {
-  reset();
   loadBombs(excludeX, excludeY);
   loadNumbers();
 }
@@ -58,10 +57,6 @@ void BoardMinefield::loadNumbers() {
       });
     }
   }
-}
-
-void BoardMinefield::reset() {
-  board.clear();
 }
 
 bool BoardMinefield::isBomb(int x, int y) {

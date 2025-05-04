@@ -1,6 +1,7 @@
 #include "game.h"
 
-#include "board-minefield.h"
+#include <iostream>
+
 #include "board-player.h"
 #include "utils.h"
 
@@ -88,7 +89,7 @@ bool Game::isWinner() {
   return winner;
 }
 
-bool Game::getLengthBoard() {
+int Game::getLengthBoard() {
   return lengthBoard;
 }
 

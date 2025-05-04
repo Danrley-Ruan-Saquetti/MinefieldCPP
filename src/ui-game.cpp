@@ -33,16 +33,16 @@ void UIGame::writeBoard(bool isShowHouseHidden) {
   vector<vector<int>> board = game.getBoardMinefield();
 
   cout << endl
-       << string(4, ' ');
+       << string(3, ' ');
   for (int i = 1; i <= board.size(); i++) {
     cout << "  " << left << setw(2) << i;
   }
   cout << endl;
 
   for (int i = 0; i < board.size(); i++) {
-    cout << string(4, ' ') << string(board[i].size() * 4 + 1, '-') << endl;
+    cout << string(3, ' ') << string(board[i].size() * 4 + 1, '-') << endl;
 
-    cout << left << setw(4) << (i + 1);
+    cout << left << setw(3) << (i + 1);
 
     for (int j = 0; j < board[i].size(); j++) {
       string house = " ";
@@ -59,7 +59,7 @@ void UIGame::writeBoard(bool isShowHouseHidden) {
     cout << "|" << endl;
   }
 
-  cout << string(4, ' ') << string(board[0].size() * 4 + 1, '-');
+  cout << string(4, ' ') << string(board[0].size() * 4 + 1, '-') << endl;
 }
 
 string UIGame::formatHouse(int value) {

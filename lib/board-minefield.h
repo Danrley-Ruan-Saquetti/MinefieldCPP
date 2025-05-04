@@ -15,7 +15,6 @@ class BoardMinefield {
   BoardMinefield(int length = 0, int amountBombs = 0);
 
   void loadBoard(int excludeX = -1, int excludeY = -1);
-  void reset();
   bool isBomb(int x, int y);
   int getHouse(int x, int y);
   std::vector<std::vector<int>> getBoard();

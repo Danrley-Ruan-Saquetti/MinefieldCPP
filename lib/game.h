@@ -36,7 +36,7 @@ class Game {
   bool isClosed(int x, int y);
   bool isPlaying();
   bool isWinner();
-  bool getLengthBoard();
+  int getLengthBoard();
   std::vector<std::vector<int>> getBoardMinefield();
   std::vector<std::vector<int>> getBoardPlayer();
 
