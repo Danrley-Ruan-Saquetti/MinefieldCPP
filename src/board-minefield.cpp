@@ -3,6 +3,7 @@
 #include <random>
 #include <vector>
 
+#include "board.h"
 #include "utils.h"
 
 BoardMinefield::BoardMinefield(int lengthBoard, int amountBombs)
@@ -67,6 +68,6 @@ int BoardMinefield::getHouse(int x, int y) {
   return board[x][y];
 }
 
-std::vector<std::vector<int>> BoardMinefield::getBoard() {
+board_t BoardMinefield::getBoard() {
   return board;
 }

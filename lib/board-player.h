@@ -3,8 +3,10 @@
 
 #include <vector>
 
+#include "board.h"
+
 class BoardPlayer {
-  std::vector<std::vector<int>> board;
+  board_t board;
 
  public:
   static const int HOUSE_VISIBLE_CLOSED = 0;
@@ -18,7 +20,7 @@ class BoardPlayer {
   bool isOpened(int x, int y);
   bool isMarked(int x, int y);
   bool isClosed(int x, int y);
-  std::vector<std::vector<int>> getBoard();
+  board_t getBoard();
 };
 
 #endif

@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "board-player.h"
+#include "board.h"
 #include "utils.h"
 
 Game::Game(int difficulty) {
@@ -93,11 +94,11 @@ int Game::getLengthBoard() {
   return lengthBoard;
 }
 
-std::vector<std::vector<int>> Game::getBoardMinefield() {
+board_t Game::getBoardMinefield() {
   return boardMinefield.getBoard();
 }
 
-std::vector<std::vector<int>> Game::getBoardPlayer() {
+board_t Game::getBoardPlayer() {
   return boardPlayer.getBoard();
 }
 

@@ -59,7 +59,7 @@ void UIGame::writeBoard(bool isShowHouseHidden) {
     cout << "|" << endl;
   }
 
-  cout << string(4, ' ') << string(board[0].size() * 4 + 1, '-') << endl;
+  cout << string(3, ' ') << string(board[0].size() * 4 + 1, '-') << endl;
 }
 
 string UIGame::formatHouse(int value) {

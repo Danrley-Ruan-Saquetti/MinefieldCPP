@@ -2,6 +2,8 @@
 
 #include <vector>
 
+#include "board.h"
+
 BoardPlayer::BoardPlayer(int lengthBoard) : board(lengthBoard, std::vector<int>(lengthBoard)) {}
 
 void BoardPlayer::toggleMarkHouse(int x, int y) {
@@ -28,6 +30,6 @@ bool BoardPlayer::isClosed(int x, int y) {
   return board[x][y] == HOUSE_VISIBLE_CLOSED;
 }
 
-std::vector<std::vector<int>> BoardPlayer::getBoard() {
+board_t BoardPlayer::getBoard() {
   return board;
 }

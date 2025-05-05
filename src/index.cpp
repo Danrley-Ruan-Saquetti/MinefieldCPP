@@ -46,12 +46,12 @@ int main() {
     Game game(difficulty);
     UIGame uiGame(game);
 
-    PlayerMove* playerMove;
+    PlayerMove* playerMove = nullptr;
 
     do {
       uiGame.writeBoard();
       playerMove = readPlayerMove(game.getLengthBoard());
-    } while (playerMove == nullptr);
+    } while (!playerMove);
 
     game.loadBoard(playerMove->x, playerMove->y);
 
@@ -63,6 +63,8 @@ int main() {
         game.performPlayerMove(*playerMove);
       }
     } while (game.isPlaying());
+
+    delete playerMove;
 
     uiGame.writeBoard(true);
 

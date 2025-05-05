@@ -3,11 +3,13 @@
 
 #include <vector>
 
+#include "board.h"
+
 class BoardMinefield {
   int lengthBoard;
   int amountBombs;
 
-  std::vector<std::vector<int>> board;
+  board_t board;
 
  public:
   static const int HOUSE_BOMB = -1;
@@ -17,7 +19,7 @@ class BoardMinefield {
   void loadBoard(int excludeX = -1, int excludeY = -1);
   bool isBomb(int x, int y);
   int getHouse(int x, int y);
-  std::vector<std::vector<int>> getBoard();
+  board_t getBoard();
 
  private:
   void loadBombs(int excludeX = -1, int excludeY = -1);

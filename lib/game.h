@@ -5,6 +5,7 @@
 
 #include "board-minefield.h"
 #include "board-player.h"
+#include "board.h"
 #include "player-move.h"
 
 class Game {
@@ -37,8 +38,8 @@ class Game {
   bool isPlaying();
   bool isWinner();
   int getLengthBoard();
-  std::vector<std::vector<int>> getBoardMinefield();
-  std::vector<std::vector<int>> getBoardPlayer();
+  board_t getBoardMinefield();
+  board_t getBoardPlayer();
 
  private:
   void openHouse(int x, int y);
