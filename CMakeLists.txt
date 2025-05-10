@@ -29,4 +29,12 @@ file(GLOB_RECURSE SOURCES
 
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
+option(ENABLE_ASAN "Enable Address Sanitizer" OFF)
+
+if(ENABLE_ASAN)
+  message("-- Debug ON")
+  add_compile_options(-fsanitize=address -g)
+  add_link_options(-fsanitize=address)
+endif()
+
 add_executable(CampoMinado ${SOURCES})
