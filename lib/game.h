@@ -38,8 +38,8 @@ class Game {
   bool isPlaying();
   bool isWinner();
   int getLengthBoard();
-  board_t getBoardMinefield();
-  board_t getBoardPlayer();
+  const board_t& getBoardMinefield();
+  const board_t& getBoardPlayer();
 
  private:
   void openHouse(int x, int y);

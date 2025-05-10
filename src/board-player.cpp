@@ -30,6 +30,6 @@ bool BoardPlayer::isClosed(int x, int y) {
   return board[x][y] == HOUSE_VISIBLE_CLOSED;
 }
 
-board_t BoardPlayer::getBoard() {
+const board_t& BoardPlayer::getBoard() {
   return board;
 }

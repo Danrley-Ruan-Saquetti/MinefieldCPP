@@ -94,11 +94,11 @@ int Game::getLengthBoard() {
   return lengthBoard;
 }
 
-board_t Game::getBoardMinefield() {
+const board_t& Game::getBoardMinefield() {
   return boardMinefield.getBoard();
 }
 
-board_t Game::getBoardPlayer() {
+const board_t& Game::getBoardPlayer() {
   return boardPlayer.getBoard();
 }
 
@@ -134,7 +134,7 @@ void Game::openHouses(int x, int y) {
     int xBoard = x + deltaX;
     int yBoard = y + deltaY;
 
-    if (xBoard < 0 || yBoard < 0 || xBoard > lengthBoard || yBoard > lengthBoard) {
+    if (xBoard < 0 || yBoard < 0 || xBoard >= lengthBoard || yBoard >= lengthBoard) {
       return;
     }
 

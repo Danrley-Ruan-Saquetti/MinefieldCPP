@@ -48,7 +48,7 @@ void BoardMinefield::loadNumbers() {
         int x = i + deltaX;
         int y = j + deltaY;
 
-        if (x < 0 || y < 0 || x > board.size() || y > board[i].size()) {
+        if (x < 0 || y < 0 || x >= board.size() || y >= board[i].size()) {
           return;
         }
 
@@ -68,6 +68,6 @@ int BoardMinefield::getHouse(int x, int y) {
   return board[x][y];
 }
 
-board_t BoardMinefield::getBoard() {
+const board_t& BoardMinefield::getBoard() {
   return board;
 }

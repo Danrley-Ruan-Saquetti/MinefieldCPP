@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 
+#include "board.h"
 #include "game.h"
 
 using namespace std;
@@ -30,7 +31,7 @@ void UIGame::writeMenuDifficulty() {
 }
 
 void UIGame::writeBoard(bool isShowHouseHidden) {
-  vector<vector<int>> board = game.getBoardMinefield();
+  const board_t& board = game.getBoardMinefield();
 
   cout << endl
        << string(3, ' ');

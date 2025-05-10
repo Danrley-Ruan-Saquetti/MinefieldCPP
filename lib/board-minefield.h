@@ -19,7 +19,7 @@ class BoardMinefield {
   void loadBoard(int excludeX = -1, int excludeY = -1);
   bool isBomb(int x, int y);
   int getHouse(int x, int y);
-  board_t getBoard();
+  const board_t& getBoard();
 
  private:
   void loadBombs(int excludeX = -1, int excludeY = -1);
