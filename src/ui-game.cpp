@@ -10,7 +10,7 @@
 
 using namespace std;
 
-UIGame::UIGame(Game game) : game(game) {}
+UIGame::UIGame(Game& game) : game(game) {}
 
 void UIGame::writeMenuInitial() {
   cout << endl

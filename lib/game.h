@@ -12,13 +12,13 @@ class Game {
   BoardMinefield boardMinefield;
   BoardPlayer boardPlayer;
 
-  int lengthBoard;
-  int amountBombs;
+  int lengthBoard{};
+  int amountBombs{};
 
-  bool playing = false;
-  bool winner = false;
+  bool playing{};
+  bool winner{};
 
-  int amountHousesSecurity;
+  int amountHousesSecurity{};
 
  public:
   Game(int difficulty);

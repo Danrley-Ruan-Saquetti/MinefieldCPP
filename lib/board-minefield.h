@@ -6,8 +6,8 @@
 #include "board.h"
 
 class BoardMinefield {
-  int lengthBoard;
-  int amountBombs;
+  int lengthBoard{};
+  int amountBombs{};
 
   board_t board;
 

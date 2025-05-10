@@ -7,10 +7,10 @@
 #include "game.h"
 
 class UIGame {
-  Game game;
+  Game& game;
 
  public:
-  UIGame(Game game);
+  UIGame(Game& game);
 
   static void writeMenuInitial();
   static void writeMenuDifficulty();
