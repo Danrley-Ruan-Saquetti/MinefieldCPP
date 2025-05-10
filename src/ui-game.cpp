@@ -48,7 +48,7 @@ void UIGame::writeBoard(bool isShowHouseHidden) {
     for (int j = 0; j < board[i].size(); j++) {
       string house = " ";
 
-      if (!game.isClosed(i, j) || isShowHouseHidden) {
+      if (game.isOpened(i, j) || isShowHouseHidden) {
         house = formatHouse(board[i][j]);
       } else if (game.isMarked(i, j)) {
         house = "!";
