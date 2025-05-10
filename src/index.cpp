@@ -55,12 +55,17 @@ int main() {
 
     game.loadBoard(playerMove->x, playerMove->y);
 
+    delete playerMove;
+    playerMove = nullptr;
+
     do {
       uiGame.writeBoard();
       playerMove = readPlayerMove(game.getLengthBoard());
 
       if (playerMove != nullptr) {
         game.performPlayerMove(*playerMove);
+        delete playerMove;
+        playerMove = nullptr;
       }
     } while (game.isPlaying());
 
