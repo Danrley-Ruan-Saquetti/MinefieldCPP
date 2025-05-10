@@ -30,6 +30,10 @@ bool BoardPlayer::isClosed(int x, int y) {
   return board[x][y] == HOUSE_VISIBLE_CLOSED;
 }
 
+const std::vector<int>& BoardPlayer::operator[](int indexLinha) {
+  return board[indexLinha];
+}
+
 const board_t& BoardPlayer::getBoard() {
   return board;
 }

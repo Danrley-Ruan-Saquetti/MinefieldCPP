@@ -68,6 +68,10 @@ int BoardMinefield::getHouse(int x, int y) {
   return board[x][y];
 }
 
+const std::vector<int>& BoardMinefield::operator[](int indexLine) const {
+  return board[indexLine];
+}
+
 const board_t& BoardMinefield::getBoard() {
   return board;
 }

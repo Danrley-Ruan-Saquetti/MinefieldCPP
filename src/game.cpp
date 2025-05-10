@@ -126,7 +126,7 @@ void Game::openHouses(int x, int y) {
 
   showHouse(x, y);
 
-  if (boardMinefield.getHouse(x, y) > 0) {
+  if (boardMinefield[x][y] > 0) {
     return;
   }
 

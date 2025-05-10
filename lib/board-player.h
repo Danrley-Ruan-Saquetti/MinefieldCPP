@@ -20,6 +20,7 @@ class BoardPlayer {
   bool isOpened(int x, int y);
   bool isMarked(int x, int y);
   bool isClosed(int x, int y);
+  const std::vector<int>& operator[](int indexLinha);
   const board_t& getBoard();
 };
 

@@ -19,6 +19,7 @@ class BoardMinefield {
   void loadBoard(int excludeX = -1, int excludeY = -1);
   bool isBomb(int x, int y);
   int getHouse(int x, int y);
+  const std::vector<int>& operator[](int indexLine) const;
   const board_t& getBoard();
 
  private:
